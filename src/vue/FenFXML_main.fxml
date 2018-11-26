@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.FenFXML_mainController">
+   <children>
+      <Label layoutX="333.0" layoutY="15.0" prefHeight="17.0" prefWidth="117.0" text="Réservation de salle :" />
+      <TableView id="reservationTable" fx:id="reservationTable" layoutX="16.0" layoutY="42.0" prefHeight="243.0" prefWidth="302.0">
+        <columns>
+          <TableColumn id="salleColonne" fx:id="salleColonne" prefWidth="75.0" text="Salle" />
+          <TableColumn id="jourColonne" fx:id="jourColonne" prefWidth="75.0" text="Date" />
+            <TableColumn id="horaireColonne" fx:id="horaireColonne" prefWidth="75.0" text="Heure" />
+            <TableColumn id="associationColonne" fx:id="associationColonne" prefWidth="75.0" text="Association" />
+        </columns>
+      </TableView>
+      <Label layoutX="17.0" layoutY="15.0" prefHeight="17.0" prefWidth="149.0" text="Liste des réservations :" />
+      <SplitPane dividerPositions="0.41509433962264153" layoutX="17.0" layoutY="409.0" orientation="VERTICAL" prefHeight="108.0" prefWidth="160.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="47.0" prefWidth="158.0">
+               <children>
+                  <Label layoutX="52.0" layoutY="12.0" prefHeight="17.0" prefWidth="55.0" text="Accueillir" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Button layoutX="83.0" layoutY="24.0" mnemonicParsing="false" text="Modifier" />
+                  <Button layoutX="14.0" layoutY="24.0" mnemonicParsing="false" text="Ajouter" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <SplitPane dividerPositions="0.41509433962264153" layoutX="188.0" layoutY="409.0" orientation="VERTICAL" prefHeight="108.0" prefWidth="160.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="47.0" prefWidth="158.0">
+               <children>
+                  <Label layoutX="60.0" layoutY="12.0" prefHeight="17.0" prefWidth="38.0" text="Sport" />
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Button layoutX="83.0" layoutY="24.0" mnemonicParsing="false" text="Modifier" />
+                  <Button layoutX="14.0" layoutY="24.0" mnemonicParsing="false" text="Ajouter" />
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <SplitPane dividerPositions="0.41509433962264153" layoutX="361.0" layoutY="409.0" orientation="VERTICAL" prefHeight="108.0" prefWidth="160.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="47.0" prefWidth="158.0">
+               <children>
+                  <Label layoutX="49.0" layoutY="12.0" prefHeight="17.0" prefWidth="61.0" text="Association" />
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Button layoutX="83.0" layoutY="24.0" mnemonicParsing="false" text="Modifier" />
+                  <Button layoutX="14.0" layoutY="24.0" mnemonicParsing="false" text="Ajouter" />
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <SplitPane dividerPositions="0.41509433962264153" layoutX="530.0" layoutY="409.0" orientation="VERTICAL" prefHeight="108.0" prefWidth="160.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="47.0" prefWidth="158.0">
+               <children>
+                  <Label layoutX="52.0" layoutY="12.0" prefHeight="17.0" prefWidth="55.0" text="Pratiquer" />
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Button layoutX="83.0" layoutY="24.0" mnemonicParsing="false" text="Modifier" />
+                  <Button layoutX="14.0" layoutY="24.0" mnemonicParsing="false" text="Ajouter" />
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <Button id="btnSupprimer" fx:id="btnSupprimer" layoutX="237.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleSupprimerReservation" prefHeight="25.0" prefWidth="81.0" text="Supprimer" textFill="RED" />
+      <Button id="btnInserer" fx:id="btnInserer" layoutX="17.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleInsererReservation" prefHeight="25.0" prefWidth="81.0" text="Inserer" />
+      <Button id="btnModifier" fx:id="btnModifier" layoutX="127.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleModifierReservation" prefHeight="25.0" prefWidth="81.0" text="Modifier" />
+      <GridPane layoutX="333.0" layoutY="47.0" prefHeight="234.0" prefWidth="331.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="17.0" prefWidth="43.0" text="Salle :" />
+            <Label prefHeight="17.0" prefWidth="43.0" text="Date :" GridPane.rowIndex="1" />
+            <Label text="Heure :" GridPane.rowIndex="2" />
+            <Label text="Association :" GridPane.rowIndex="3" />
+            <Label id="SalleLabel" fx:id="SalleLabel" text="SalleLabel" GridPane.columnIndex="1" />
+            <Label id="DateLabel" fx:id="DateLabel" text="DateLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label id="HeureLabel" fx:id="HeureLabel" text="HeureLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label id="AssociationLabel" fx:id="AssociationLabel" text="AssociationLabel" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>
